@@ -7,20 +7,18 @@ import { CircularProgress, Grid } from '@mui/material'
 const Posts = ({ setCurrentId }) => {
     const classes = useStyles()
     const posts = useSelector((state) => state.posts)
-    const sortedPosts = posts.slice().sort((a, b) => {return  new Date(b.createdAt) - new Date(a.createdAt) })
-
+    const sortedPosts = posts.slice().sort((a, b) => { return new Date(b.createdAt) - new Date(a.createdAt) })
+    console.log(sortedPosts.length)
     return (
-        <>
-            {(posts.lenght === 0) ? <CircularProgress /> : (
-                <Grid className={classes.container} container alignItems='stretch' spacing={3}>
-                    {sortedPosts.map(post => (
-                        <Grid key={post._id} item xs={12} sm={6} lg={4}>
-                            <Post post={post} setCurrentId={setCurrentId} />
-                        </Grid>
-                    ))}
-                </Grid>
-            )}
-        </>
+        !sortedPosts.length ? <CircularProgress /> : (
+            <Grid className={classes.container} container alignItems='stretch' spacing={3}>
+                {sortedPosts.map(post => (
+                    <Grid key={post._id} item xs={12} sm={6} lg={4}>
+                        <Post post={post} setCurrentId={setCurrentId} />
+                    </Grid>
+                ))}
+            </Grid>
+        )
     )
 }
 

@@ -41,11 +41,9 @@ const Navbar = () => {
                         </Typography>
                         <img className={classes.image} src={logo} alt='memories' height='40' />
                     </Grid>
-                    <Grid item xs={12} md={6} justifyContent='end'>
+                    <Grid item xs={12} md={6} display='flex' justifyContent='end' textAlign='right' alignItems='center' >
                         {user ? (
                             <Toolbar className={classes.toolbar}  >
-
-
                                 <Avatar alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
                                 <Typography className={classes.userName} variant='h6'>{user.result.name}</Typography>
                                 <Button variant='contained' className={classes.logout} color='secondary' onClick={logout} >Logout</Button>
