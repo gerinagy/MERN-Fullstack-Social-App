@@ -7,7 +7,6 @@ import Form from '../Form/Form'
 
 const Home = () => {
     const dispatch = useDispatch()
-    // const classes = useStyles()
     const [currentId, setCurrentId] = useState(null)
 
     useEffect(() => {
