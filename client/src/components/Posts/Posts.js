@@ -8,7 +8,7 @@ const Posts = ({ setCurrentId }) => {
     const classes = useStyles()
     const posts = useSelector((state) => state.posts)
     const sortedPosts = posts.slice().sort((a, b) => { return new Date(b.createdAt) - new Date(a.createdAt) })
-    console.log(sortedPosts.length)
+
     return (
         !sortedPosts.length ? <CircularProgress /> : (
             <Grid className={classes.container} container alignItems='stretch' spacing={3}>
