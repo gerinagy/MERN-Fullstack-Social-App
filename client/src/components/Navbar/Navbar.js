@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import decode from 'jwt-decode'
 import useStyles from './styles'
 import logo from '../../images/logo.png'
+import memoriesLogo from '../../images/memories-Text.png'
 import { LOGOUT } from '../../constans/actionTypes'
 
 const Navbar = () => {
@@ -35,13 +36,14 @@ const Navbar = () => {
     return (
         <>
             <AppBar className={classes.appBar} position='static' color='inherit'>
-                <Grid container display='flex' >
-                    <Grid item xs={12} md={6} className={classes.brandContainer}>
-                        <Typography component={Link} to='/' className={classes.heading} variant='h3' alignItems='center' > Memories
-                        </Typography>
+                <Grid container  >
+                    <Grid item xs={12} md={6} justifyContent={{ xs: 'center', md: 'start' }} className={classes.brandContainer}>
+                        <Link to='/' className={classes.heading} >
                         <img className={classes.image} src={logo} alt='memories' height='40' />
+                        <img className={classes.image} src={memoriesLogo} alt='memoriesLogo' height='40' />
+                        </Link>
                     </Grid>
-                    <Grid item xs={12} md={6} display='flex' justifyContent='end' textAlign='right' alignItems='center' >
+                    <Grid item xs={12} md={6} display='flex' justifyContent={{ xs: 'center', md: 'end' }} textAlign='right' alignItems='center' >
                         {user ? (
                             <Toolbar className={classes.toolbar}  >
                                 <Avatar alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>

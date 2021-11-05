@@ -3,9 +3,9 @@ import { makeStyles } from '@mui/styles'
 export default makeStyles({
   media: {
     height: 0,
-    paddingTop: '56.25%',
+    paddingTop: '70.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    backgroundBlendMode: 'lighten',
+    backgroundBlendMode: 'darken',
   },
   border: {
     border: 'solid',
@@ -39,7 +39,7 @@ export default makeStyles({
   details: {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '20px',
+    margin: '10px',
   },
   title: {
     padding: '0 16px',
